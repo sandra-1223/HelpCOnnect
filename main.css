@@ -32,6 +32,20 @@ body {
     text-align: center;
 }
 
+#container-S_register
+{
+    background-color: #127600;
+    position: relative;
+    top: 20%;
+    margin: auto;
+    width: 340px;
+    height: 480px;
+    padding: 20px 0px;
+    bottom: 30%;
+    border-radius: 0.35em;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
 #title {
     position: relative;
     background-color: #127600;
