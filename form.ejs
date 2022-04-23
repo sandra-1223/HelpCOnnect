@@ -1,5 +1,6 @@
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="style1.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 
@@ -26,7 +27,7 @@ a:hover
                 <button type="button" class="btn btn-outline-white" style="color: rgb(255, 255, 255); margin-left: 60vw;" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <button type="button" class="btn btn-outline-white" style="color: rgb(255, 255, 255); margin-left: 2vw;" href="#">Post</a>
+                <button type="button" class="btn btn-outline-white" style="color: rgb(255, 255, 255); margin-left: 2vw;" href="#">Request</a>
               </li>
               <li class="nav-item">
                 <button type="button" class="btn btn-outline-white" style="color: rgb(255, 255, 255); margin-left: 2vw;" href="#">View</a>
@@ -37,33 +38,31 @@ a:hover
             </ul>
           </div>
     </nav>
-    <p style="margin-top:7vw;"></p>
-    <%
-    if(postData.length!=0){
-    var i=1;
-    postData.forEach(function(data){
-    %>
-    <center>
-      <div class="table-responsive" style="margin-top:2vw;">
-      <table  class="table table-dark table-striped">
-      <tr>
-      <td>
-        <h3 style="margin-left: 5vw;" ><i></i>POST</a>
-        <h4 style="margin-left: 6vw;">Post id : <%=data.post_id%></a></h4>
-        <p  style="margin-left: 6vw;">Type : <%=data.post_type%></p>
-        <p  style="margin-left: 6vw;">Description : <%=data.post_desc%> </p>
-        <p  style="margin-left: 6vw;">NGO : <%=data.ngo_id%></p>
-        <div class="d-grid" style="margin-top:2vw;">
-            <button type="button" class="btn btn-primary btn-block">Contact Now</button>
-        </div>
-      </td>
-      </tr>
-      </table>
-      </div>
-      <%  i++; }) %>
-      <% } else{ %>
-        <h1>NOT FOUND</h1>
-        <% } %>
-      </center>
+
+    <div class="container-fluid">
+        <form  style="margin-top: 8vw; width: 20%; align-self: flex-start;" action='form' method='POST'>
+            <div class="mb-3 mt-3">
+              <label for="label" class="form-label" >Description:</label>
+              <input type="text" class="form-control" id="desc" placeholder="Enter Description" name="desc">
+            </div>
+            <div class="mb-3">
+              <label  class="form-label">NGO:</label>
+              <input type="text" class="form-control" id="ngo_id" placeholder="Enter NGO ID" name="ngo_id">
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Type:</label>
+                <select class="form-select" id="type" name="type">
+                    <option>Select</option>
+                    <option>Clothes&Shelter</option>
+                    <option>Groceries</option>
+                    <option>Education</option> 
+                  </select>
+            </div><br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+
+
 </body>
+
 </html>
